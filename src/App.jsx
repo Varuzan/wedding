@@ -150,7 +150,7 @@ export default function App() {
     return (
         <div className="page">
             <audio ref={audioRef} loop preload="auto" playsInline>
-                <source src="/wedding-music.mp3" type="audio/mpeg" />
+                <source src="/wedding/wedding-music.mp3" type="audio/mpeg" />
             </audio>
 
             <main className="main-content">
