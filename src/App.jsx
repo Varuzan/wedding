@@ -158,7 +158,7 @@ export default function App() {
                         <img src="./wedding-logo.webp" alt="Logo invitation hero" className="logo__img" loading="lazy" />
 
                         <div className="hero-block">
-                            <h1 className="hero-title">EXIASAR &amp; MAYRANUSH</h1>
+                            <h1 className="hero-title">YEGHIAZAR &amp; MAYRANUSH</h1>
                             <div className="line" />
                             <h1 className="hero-subtitle">Our forever begins today</h1>
                         </div>
