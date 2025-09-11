@@ -98,7 +98,7 @@ export default function App() {
             setIsTriggered(false);
         }
     }
-    
+
     useEffect(() => {
         let startY = 0;
 
@@ -149,7 +149,13 @@ export default function App() {
 
     return (
         <div className="page">
-            <audio ref={audioRef} src="/wedding/wedding-music.mp3" loop preload="auto" playsInline />
+            <audio
+                ref={audioRef}
+                src="https://varuzan.github.io/wedding/wedding-music.mp3"
+                loop
+                preload="auto"
+                playsInline
+            />
 
             <main className="main-content">
                 <div className="hero-section">
@@ -250,30 +256,30 @@ export default function App() {
 
                 <div className="invitation-section">
                     <motion.h2 className="invitation-subtitle"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >Ընկերներ և բարեկամներ</motion.h2>
 
                     <motion.h3 className="invitation-text"
-                               initial={{ opacity: 0, x: -80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: -80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: -80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >
                         Սիրով հրավիրում ենք Ձեզ՝ կիսելու մեզ հետ մեր կյանքի<br />
                         կարևոր և հիշարժան օրը:
                     </motion.h3>
 
                     <motion.h2 className="invitation-cta"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >
                         Սպասում ենք Ձեզ մեր հարսանիքին
                     </motion.h2>
@@ -322,11 +328,11 @@ export default function App() {
                     />
 
                     <motion.h2 className="countdown-label"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >ՄՆԱՑ</motion.h2>
 
                     <CountdownTimer />
@@ -392,11 +398,11 @@ export default function App() {
 
                 <div className="program-section">
                     <motion.h2 className="program-title"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >Օրվա Ծրագիրը</motion.h2>
 
                     <motion.div
@@ -420,25 +426,25 @@ export default function App() {
                         src="./heart.png"
                     />
                     <motion.h2 className="program-subtitle"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >ՀԱՐՍԻ ՏՈՒՆ</motion.h2>
                     <motion.h2 className="program-time"
-                               initial={{ opacity: 0, x: -80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: -80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: -80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >11։00</motion.h2>
                     <motion.h2 className="program-location"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >ք․ Երևան</motion.h2>
                     <motion.img
                         className="program-image"
@@ -462,25 +468,25 @@ export default function App() {
                         src="./rings.png"
                     />
                     <motion.h2 className="program-subtitle"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >ՊՍԱԿԱԴՐՈՒԹՅՈՒՆ</motion.h2>
                     <motion.h2 className="program-time"
-                               initial={{ opacity: 0, x: -80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: -80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: -80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >14։00 <br /> Հովհանավանք</motion.h2>
                     <motion.h2 className="program-location"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >Արագածոտնի մարզ, <br /> գ․ Օհանավան</motion.h2>
                     <motion.img
                         className="program-image"
@@ -514,25 +520,25 @@ export default function App() {
                         src="./pen_heart.webp"
                     />
                     <motion.h2 className="program-subtitle"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >Ամուսնության գրանցում</motion.h2>
                     <motion.h2 className="program-time"
-                               initial={{ opacity: 0, x: -80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: -80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: -80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >16:30 <br /> «Մորենա» <br /> ռեստորանային <br /> համալիր</motion.h2>
                     <motion.h2 className="program-location"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >Արարատի մարզ, ք․ Մասիս, <br /> Մխիթար Հերացու 7/8</motion.h2>
                     <motion.img
                         className="program-image"
@@ -556,25 +562,25 @@ export default function App() {
                         src="./glasses.png"
                     />
                     <motion.h2 className="program-subtitle"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >Հարսանեկան հանդիսություն</motion.h2>
                     <motion.h2 className="program-time"
-                               initial={{ opacity: 0, x: -80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: -80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
+                        initial={{ opacity: 0, x: -80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >17:30 <br /> «Մորենա» <br /> ռեստորանային <br /> համալիր</motion.h2>
                     <motion.h2 className="program-location"
-                               initial={{ opacity: 0, x: 80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: 80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: false, amount: 0.2 }}
+                        initial={{ opacity: 0, x: 80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: 80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: false, amount: 0.2 }}
                     >Արարատի մարզ, ք․ Մասիս, <br /> Մխիթար Հերացու 7/8</motion.h2>
                     <motion.img
                         className="program-image"
@@ -598,12 +604,12 @@ export default function App() {
                         src="./wedding-main-2.webp"
                     />
                     <motion.h2 className="confirmation-text"
-                               initial={{ opacity: 0, x: -80 }}
-                               whileInView={{ opacity: 1, x: 0 }}
-                               exit={{ opacity: 0, x: -80 }}
-                               transition={{ duration: 2 }}
-                               viewport={{ once: true, amount: 0.2 }}
-                    >Խնդրում ենք հաստատել Ձեր ներկայությունը <br/>միջոցառմանը</motion.h2>
+                        initial={{ opacity: 0, x: -80 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -80 }}
+                        transition={{ duration: 2 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                    >Խնդրում ենք հաստատել Ձեր ներկայությունը <br />միջոցառմանը</motion.h2>
                     <div>
                         {formSubmitted ? (
                             <motion.div
@@ -672,18 +678,18 @@ function CountdownTimer() {
                     <>
                         <div className="countdown-item">
                             <motion.div className="countdown-value"
-                                        initial={{ opacity: 0, y: -40 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -40 }}
-                                        transition={{ duration: 1 }}
-                                        viewport={{ once: false, amount: 0.2 }}
+                                initial={{ opacity: 0, y: -40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -40 }}
+                                transition={{ duration: 1 }}
+                                viewport={{ once: false, amount: 0.2 }}
                             >{remaining.days}</motion.div>
                             <motion.div className="countdown-label"
-                                        initial={{ opacity: 0, y: 40 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 40 }}
-                                        transition={{ duration: 1 }}
-                                        viewport={{ once: false, amount: 0.2 }}
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 40 }}
+                                transition={{ duration: 1 }}
+                                viewport={{ once: false, amount: 0.2 }}
                             >Օր</motion.div>
                         </div>
                         <motion.div
@@ -697,17 +703,17 @@ function CountdownTimer() {
                         />
                         <div className="countdown-item">
                             <motion.div className="countdown-value"
-                                        initial={{ opacity: 0, y: -40 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -40 }}
-                                        transition={{ duration: 1 }}
-                                        viewport={{ once: false, amount: 0.2 }}>{two(remaining.hours)}</motion.div>
+                                initial={{ opacity: 0, y: -40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -40 }}
+                                transition={{ duration: 1 }}
+                                viewport={{ once: false, amount: 0.2 }}>{two(remaining.hours)}</motion.div>
                             <motion.div className="countdown-label"
-                                        initial={{ opacity: 0, y: 40 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 40 }}
-                                        transition={{ duration: 1 }}
-                                        viewport={{ once: false, amount: 0.2 }}>Ժամ</motion.div>
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 40 }}
+                                transition={{ duration: 1 }}
+                                viewport={{ once: false, amount: 0.2 }}>Ժամ</motion.div>
                         </div>
                         <motion.div
                             className="countdown-line"
@@ -720,17 +726,17 @@ function CountdownTimer() {
                         />
                         <div className="countdown-item">
                             <motion.div className="countdown-value"
-                                        initial={{ opacity: 0, y: -40 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -40 }}
-                                        transition={{ duration: 1 }}
-                                        viewport={{ once: false, amount: 0.2 }}>{two(remaining.minutes)}</motion.div>
+                                initial={{ opacity: 0, y: -40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -40 }}
+                                transition={{ duration: 1 }}
+                                viewport={{ once: false, amount: 0.2 }}>{two(remaining.minutes)}</motion.div>
                             <motion.div className="countdown-label"
-                                        initial={{ opacity: 0, y: 40 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 40 }}
-                                        transition={{ duration: 1 }}
-                                        viewport={{ once: false, amount: 0.2 }}>Րոպե</motion.div>
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 40 }}
+                                transition={{ duration: 1 }}
+                                viewport={{ once: false, amount: 0.2 }}>Րոպե</motion.div>
                         </div>
                         <motion.div
                             className="countdown-line"
@@ -743,17 +749,17 @@ function CountdownTimer() {
                         />
                         <div className="countdown-item">
                             <motion.div className="countdown-value"
-                                        initial={{ opacity: 0, y: -40 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -40 }}
-                                        transition={{ duration: 1 }}
-                                        viewport={{ once: false, amount: 0.2 }}>{two(remaining.seconds)}</motion.div>
+                                initial={{ opacity: 0, y: -40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -40 }}
+                                transition={{ duration: 1 }}
+                                viewport={{ once: false, amount: 0.2 }}>{two(remaining.seconds)}</motion.div>
                             <motion.div className="countdown-label"
-                                        initial={{ opacity: 0, y: 40 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: 40 }}
-                                        transition={{ duration: 1 }}
-                                        viewport={{ once: false, amount: 0.2 }}>Վարկյան</motion.div>
+                                initial={{ opacity: 0, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: 40 }}
+                                transition={{ duration: 1 }}
+                                viewport={{ once: false, amount: 0.2 }}>Վարկյան</motion.div>
                         </div>
                     </>
                 )}
@@ -763,14 +769,14 @@ function CountdownTimer() {
 }
 
 export function MapLinkButton({
-                                 lat = 40.1792,
-                                 lng = 44.4991,
-                                 label = "Marker",
-                                 placeId = "",
-                                 className = "program-btn",
-                                 children,
-                                 ...rest
-                             }) {
+    lat = 40.1792,
+    lng = 44.4991,
+    label = "Marker",
+    placeId = "",
+    className = "program-btn",
+    children,
+    ...rest
+}) {
     const coords = `${lat},${lng}`;
     const encodedLabel = encodeURIComponent(label);
     const encodedPlaceId = encodeURIComponent(placeId);
