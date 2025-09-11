@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./index.css";
 import "./PlayButton.css"
+import musicUrl from "../public/wedding-music.mp3";
 
 import FormResonse from "./FormResponse.jsx";
 
@@ -149,13 +150,7 @@ export default function App() {
 
     return (
         <div className="page">
-            <audio
-                ref={audioRef}
-                src="https://varuzan.github.io/wedding/wedding-music.mp3"
-                loop
-                preload="auto"
-                playsInline
-            />
+            <audio ref={audioRef} src={musicUrl} loop preload="auto" playsInline />
 
             <main className="main-content">
                 <div className="hero-section">
