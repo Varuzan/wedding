@@ -149,9 +149,7 @@ export default function App() {
 
     return (
         <div className="page">
-            <audio ref={audioRef} loop preload="auto" playsInline>
-                <source src="/wedding/wedding-music.mp3" type="audio/mpeg" />
-            </audio>
+            <audio ref={audioRef} src="/wedding/wedding-music.mp3" loop preload="auto" playsInline />
 
             <main className="main-content">
                 <div className="hero-section">
