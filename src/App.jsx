@@ -191,7 +191,7 @@ export default function App() {
         <div className="page">
             <audio
                 ref={audioRef}
-                src={`${import.meta.env.BASE_URL}wedding-music.mp3`}
+                src={`${import.meta.env.BASE_URL}wedding/wedding-music.mp3`}
                 loop preload="auto" playsInline
             />
 
