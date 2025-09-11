@@ -29,7 +29,7 @@ html, body {
     position: absolute;
     background-color: transparent;
     top: 15px;
-    left: 0;
+    left: 7px;
     width: 30px;
     height: 3px;
     display: block;
@@ -169,7 +169,7 @@ html, body {
     position: absolute;
     background-color: transparent;
     top: 15px;
-    left: 24px;
+    left: 29px;
     width: 30px;
     height: 3px;
     display: block;
