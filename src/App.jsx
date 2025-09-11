@@ -23,6 +23,32 @@ export default function App() {
     const audioRef = useRef(null);
     const arrowRef = useRef(null);
     const inviteRef = useRef(null);
+    const playPromiseRef = useRef(null);
+
+    // В useEffect при монтировании — лог и обработчики ошибок/событий
+    useEffect(() => {
+        const a = audioRef.current;
+        if (!a) return;
+
+        // лог текущего src — поможет понять, что реально запрашивается
+        console.log("AUDIO initial src (resolved):", a.src);
+
+        const onError = (ev) => {
+            // audioRef.current.error содержит код и сообщение
+            console.error("Audio error event:", audioRef.current && audioRef.current.error, ev);
+        };
+        const onCanPlay = () => {
+            console.log("Audio canplay event, src:", a.currentSrc || a.src);
+        };
+        a.addEventListener("error", onError);
+        a.addEventListener("canplay", onCanPlay);
+
+        return () => {
+            a.removeEventListener("error", onError);
+            a.removeEventListener("canplay", onCanPlay);
+        };
+    }, []);
+
 
     useEffect(() => {
         const handleScroll = () => setScrollY(window.scrollY || 0);
@@ -68,37 +94,50 @@ export default function App() {
         };
     }, []);
 
-    function togglePlay(e) {
+    async function togglePlay(e) {
         const a = audioRef.current;
         if (!a) return;
 
+        // защитим от повторных параллельных вызовов
+        if (playPromiseRef.current) return;
+
         if (a.paused) {
-            a.play()
-                .then(() => {
-                    setPlaying(true);
-                    e.preventDefault();
-                    const el = inviteRef.current || document.getElementById("invitation");
-                    if (el) {
-                        const headerOffset = -200;
-                        const rect = el.getBoundingClientRect();
-                        const docTop = window.pageYOffset || document.documentElement.scrollTop;
-                        const targetY = rect.top + docTop - headerOffset;
-                        window.scrollTo({ top: targetY, behavior: "smooth" });
-                    } else {
-                        console.warn("Invite target not found");
-                    }
-                    setIsTriggered(true);
-                })
-                .catch((err) => {
-                    console.log("Play failed", err);
-                    setPlaying(false);
-                });
+            try {
+                console.log("Attempting to play, src:", a.currentSrc || a.src);
+                const p = a.play();
+                playPromiseRef.current = p;
+                await p; // ждём либо успешного старта, либо reject
+                setPlaying(true);
+                e?.preventDefault();
+                const el = inviteRef.current || document.getElementById("invitation");
+                if (el) {
+                    const headerOffset = -200;
+                    const rect = el.getBoundingClientRect();
+                    const docTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetY = rect.top + docTop - headerOffset;
+                    window.scrollTo({ top: targetY, behavior: "smooth" });
+                } else {
+                    console.warn("Invite target not found");
+                }
+                setIsTriggered(true);
+            } catch (err) {
+                console.warn("Play failed (caught)", err);
+                setPlaying(false);
+            } finally {
+                playPromiseRef.current = null;
+            }
         } else {
-            a.pause();
+            try {
+                a.pause();
+            } catch (err) {
+                console.warn("Pause failed", err);
+            }
             setPlaying(false);
             setIsTriggered(false);
+            playPromiseRef.current = null;
         }
     }
+
 
     useEffect(() => {
         let startY = 0;
@@ -150,7 +189,11 @@ export default function App() {
 
     return (
         <div className="page">
-            <audio ref={audioRef} src={musicUrl} loop preload="auto" playsInline />
+            <audio
+                ref={audioRef}
+                src={`${import.meta.env.BASE_URL}wedding-music.mp3`}
+                loop preload="auto" playsInline
+            />
 
             <main className="main-content">
                 <div className="hero-section">
