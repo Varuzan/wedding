@@ -189,11 +189,9 @@ export default function App() {
 
     return (
         <div className="page">
-            <audio
-                ref={audioRef}
-                src={`${import.meta.env.BASE_URL}wedding/wedding-music.mp3`}
-                loop preload="auto" playsInline
-            />
+            <audio ref={audioRef} src="/wedding/wedding-music.mp3" preload="auto" />
+            <button onClick={() => audioRef.current && audioRef.current.play()}>Play Music</button>
+
 
             <main className="main-content">
                 <div className="hero-section">
