@@ -15,7 +15,6 @@ function roundEven(n) {
 export default function App() {
     const [formSubmitted, setFormSubmitted] = useState(false);
 
-    // ui / audio / other
     const [playing, setPlaying] = useState(false);
     const [isTriggered, setIsTriggered] = useState(false);
     const [scrollY, setScrollY] = useState(0);
@@ -25,16 +24,13 @@ export default function App() {
     const inviteRef = useRef(null);
     const playPromiseRef = useRef(null);
 
-    // В useEffect при монтировании — лог и обработчики ошибок/событий
     useEffect(() => {
         const a = audioRef.current;
         if (!a) return;
 
-        // лог текущего src — поможет понять, что реально запрашивается
         console.log("AUDIO initial src (resolved):", a.src);
 
         const onError = (ev) => {
-            // audioRef.current.error содержит код и сообщение
             console.error("Audio error event:", audioRef.current && audioRef.current.error, ev);
         };
         const onCanPlay = () => {
@@ -194,8 +190,8 @@ export default function App() {
             <main className="main-content">
                 <div className="hero-section">
                     <div className="hero-container">
-                        <img src="./wedding-front-image.jpg" alt="Wedding invitation hero" className="hero__img" loading="lazy" />
-                        <img src="./wedding-logo.webp" alt="Logo invitation hero" className="logo__img" loading="lazy" />
+                        <img src="./image-1.webp" alt="Wedding invitation hero" className="hero__img"  />
+                        <img src="./wedding-logo.webp" alt="Logo invitation hero" className="logo__img" />
 
                         <div className="hero-block">
                             <h1 className="hero-title">YEGHIAZAR &amp; MAYRANUSH</h1>
@@ -238,7 +234,6 @@ export default function App() {
                     </div>
 
 
-                    <div className="gradient-overlay" />
 
                     <div className="story-section">
                         <motion.h1
@@ -271,7 +266,7 @@ export default function App() {
                                 transition={{ duration: 2 }}
                                 viewport={{ once: true, amount: 0.2 }}
                                 loading="lazy"
-                                src="./wedding-main-2.webp"
+                                src="./image-2.webp"
                             />
 
                             <motion.img
@@ -282,11 +277,13 @@ export default function App() {
                                 transition={{ duration: 2 }}
                                 viewport={{ once: true, amount: 0.2 }}
                                 loading="lazy"
-                                src="./wedding-main-2.webp"
+                                src="./image-3.webp"
                             />
                         </div>
                     </div>
+                <div className="gradient-overlay" />
                 </div>
+
 
                 <div className="invitation-section">
                     <motion.h2 className="invitation-subtitle"
@@ -381,7 +378,7 @@ export default function App() {
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
                         loading="lazy"
-                        src="./wedding-main-2.webp"
+                        src="./image-4.webp"
                     />
 
                     <motion.img
@@ -392,7 +389,7 @@ export default function App() {
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
                         loading="lazy"
-                        src="./wedding-main-2.webp"
+                        src="./image-5.webp"
                     />
                 </div>
 
@@ -405,17 +402,7 @@ export default function App() {
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
                         loading="lazy"
-                        src="./wedding-main-2.webp"
-                    />
-                    <motion.img
-                        className="center-image"
-                        initial={{ opacity: 0, y: 80 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 80 }}
-                        transition={{ duration: 2 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        loading="lazy"
-                        src="./wedding-main-2.webp"
+                        src="./image-6.webp"
                     />
 
                     <motion.img
@@ -426,7 +413,7 @@ export default function App() {
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
                         loading="lazy"
-                        src="./wedding-main-2.webp"
+                        src="./image-7.webp"
                     />
                 </div>
 
@@ -479,18 +466,8 @@ export default function App() {
                         exit={{ opacity: 0, x: 80 }}
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
-                    >ք․ Երևան</motion.h2>
-                    <motion.img
-                        className="program-image"
-                        initial={{ opacity: 0, x: -80 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -80 }}
-                        transition={{ duration: 2 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        loading="lazy"
-                        src="./wedding-main-2.webp"
-                    />
-                    <MapLinkButton lat={40.1836} lng={44.4990} placeId="ChIJjQX_kOC9akARXBBA-OJgQ5c" label="Our venue"></MapLinkButton>
+                    >Զովունի 1 փ, 242/6</motion.h2>
+                    <MapLinkButton placeId="ChIJz8RLwryZakARCA2KQYnRmIU" label="Հարսի տուն"></MapLinkButton>
                     <motion.img
                         className="program-icon rings-icon"
                         initial={{ opacity: 0, y: 80 }}
@@ -514,35 +491,15 @@ export default function App() {
                         exit={{ opacity: 0, x: -80 }}
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
-                    >14։00 <br /> Հովհանավանք</motion.h2>
+                    >14։00 <br /> Սուրբ Հռիփսիմե եկեղեցի</motion.h2>
                     <motion.h2 className="program-location"
                         initial={{ opacity: 0, x: 80 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 80 }}
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
-                    >Արագածոտնի մարզ, <br /> գ․ Օհանավան</motion.h2>
-                    <motion.img
-                        className="program-image"
-                        initial={{ opacity: 0, x: -80 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -80 }}
-                        transition={{ duration: 2 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        loading="lazy"
-                        src="./wedding-main-2.webp"
-                    />
-                    <MapLinkButton lat={40.1792} lng={44.4991} placeId="" label="Our venue"></MapLinkButton>
-                    <motion.img
-                        className="program-wide-image"
-                        initial={{ opacity: 0, y: 80 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 80 }}
-                        transition={{ duration: 2 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        loading="lazy"
-                        src="./wedding-main-2.webp"
-                    />
+                    >Արմավիրի մարզ, <br /> ք․ Վաղարշապատ</motion.h2>
+                    <MapLinkButton placeId="ChIJeXjuRd-VakAROhZapX043F4" label="Սուրբ Հռիփսիմե եկեղեցի"></MapLinkButton>
                     <motion.img
                         className="program-icon pen-heart-icon"
                         initial={{ opacity: 0, y: 80 }}
@@ -551,7 +508,7 @@ export default function App() {
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
                         loading="lazy"
-                        src="./pen_heart.webp"
+                        src="./home.webp"
                     />
                     <motion.h2 className="program-subtitle"
                         initial={{ opacity: 0, x: 80 }}
@@ -559,32 +516,22 @@ export default function App() {
                         exit={{ opacity: 0, x: 80 }}
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
-                    >Ամուսնության գրանցում</motion.h2>
+                    >Փեսաի տուն</motion.h2>
                     <motion.h2 className="program-time"
                         initial={{ opacity: 0, x: -80 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -80 }}
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
-                    >16:30 <br /> «Մորենա» <br /> ռեստորանային <br /> համալիր</motion.h2>
+                    >15:30</motion.h2>
                     <motion.h2 className="program-location"
                         initial={{ opacity: 0, x: 80 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 80 }}
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
-                    >Արարատի մարզ, ք․ Մասիս, <br /> Մխիթար Հերացու 7/8</motion.h2>
-                    <motion.img
-                        className="program-image"
-                        initial={{ opacity: 0, x: -80 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -80 }}
-                        transition={{ duration: 2 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        loading="lazy"
-                        src="./wedding-main-2.webp"
-                    />
-                    <MapLinkButton lat={40.1782} lng={44.4893} placeId="" label="Our venue"></MapLinkButton>
+                    >Արմավիրի մարզ, ք․Արմավիր, <br />Պարույր Սևակի փողոց, 3</motion.h2>
+                    <MapLinkButton lat={40.159627} lng={44.044537} placeId="" label="Փեսաի տուն"></MapLinkButton>
                     <motion.img
                         className="program-icon glasses-icon"
                         initial={{ opacity: 0, y: 80 }}
@@ -608,35 +555,15 @@ export default function App() {
                         exit={{ opacity: 0, x: -80 }}
                         transition={{ duration: 2 }}
                         viewport={{ once: true, amount: 0.2 }}
-                    >17:30 <br /> «Մորենա» <br /> ռեստորանային <br /> համալիր</motion.h2>
+                    >17:30 <br /> «Ռենեսանս» <br /> ռեստորանային <br /> համալիր</motion.h2>
                     <motion.h2 className="program-location"
                         initial={{ opacity: 0, x: 80 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 80 }}
                         transition={{ duration: 2 }}
                         viewport={{ once: false, amount: 0.2 }}
-                    >Արարատի մարզ, ք․ Մասիս, <br /> Մխիթար Հերացու 7/8</motion.h2>
-                    <motion.img
-                        className="program-image"
-                        initial={{ opacity: 0, x: -80 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        exit={{ opacity: 0, x: -80 }}
-                        transition={{ duration: 2 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        loading="lazy"
-                        src="./wedding-main-2.webp"
-                    />
-                    <MapLinkButton lat={40.1792} lng={44.4991} placeId="" label="Our venue"></MapLinkButton>
-                    <motion.img
-                        className="program-wide-image"
-                        initial={{ opacity: 0, y: 80 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 80 }}
-                        transition={{ duration: 2 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        loading="lazy"
-                        src="./wedding-main-2.webp"
-                    />
+                    >ք․ Երևան</motion.h2>
+                    <MapLinkButton placeId="ChIJpWYupr2-akARrnU_dw7cfFY" label="Հարսանեկան հանդիսություն"></MapLinkButton>
                     <motion.h2 className="confirmation-text"
                         initial={{ opacity: 0, x: -80 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -716,14 +643,14 @@ function CountdownTimer() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -40 }}
                                 transition={{ duration: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}
+                                viewport={{ once: true, amount: 0.2 }}
                             >{remaining.days}</motion.div>
                             <motion.div className="countdown-label"
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 40 }}
                                 transition={{ duration: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}
+                                viewport={{ once: true, amount: 0.2 }}
                             >Օր</motion.div>
                         </div>
                         <motion.div
@@ -732,7 +659,7 @@ function CountdownTimer() {
                             whileInView={{ scaleY: 1, opacity: 1 }}
                             exit={{ scaleY: 0, opacity: 0 }}
                             transition={{ duration: 1 }}
-                            viewport={{ once: false, amount: 0.5 }}
+                            viewport={{ once: true, amount: 0.5 }}
                             aria-hidden="true"
                         />
                         <div className="countdown-item">
@@ -741,13 +668,13 @@ function CountdownTimer() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -40 }}
                                 transition={{ duration: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}>{two(remaining.hours)}</motion.div>
+                                viewport={{ once: true, amount: 0.2 }}>{two(remaining.hours)}</motion.div>
                             <motion.div className="countdown-label"
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 40 }}
                                 transition={{ duration: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}>Ժամ</motion.div>
+                                viewport={{ once: true, amount: 0.2 }}>Ժամ</motion.div>
                         </div>
                         <motion.div
                             className="countdown-line"
@@ -755,7 +682,7 @@ function CountdownTimer() {
                             whileInView={{ scaleY: 1, opacity: 1 }}
                             exit={{ scaleY: 0, opacity: 0 }}
                             transition={{ duration: 1 }}
-                            viewport={{ once: false, amount: 0.5 }}
+                            viewport={{ once: true, amount: 0.5 }}
                             aria-hidden="true"
                         />
                         <div className="countdown-item">
@@ -764,13 +691,13 @@ function CountdownTimer() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -40 }}
                                 transition={{ duration: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}>{two(remaining.minutes)}</motion.div>
+                                viewport={{ once: true, amount: 0.2 }}>{two(remaining.minutes)}</motion.div>
                             <motion.div className="countdown-label"
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 40 }}
                                 transition={{ duration: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}>Րոպե</motion.div>
+                                viewport={{ once: true, amount: 0.2 }}>Րոպե</motion.div>
                         </div>
                         <motion.div
                             className="countdown-line"
@@ -778,7 +705,7 @@ function CountdownTimer() {
                             whileInView={{ scaleY: 1, opacity: 1 }}
                             exit={{ scaleY: 0, opacity: 0 }}
                             transition={{ duration: 1 }}
-                            viewport={{ once: false, amount: 0.5 }}
+                            viewport={{ once: true, amount: 0.5 }}
                             aria-hidden="true"
                         />
                         <div className="countdown-item">
@@ -787,13 +714,13 @@ function CountdownTimer() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: -40 }}
                                 transition={{ duration: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}>{two(remaining.seconds)}</motion.div>
+                                viewport={{ once: true, amount: 0.2 }}>{two(remaining.seconds)}</motion.div>
                             <motion.div className="countdown-label"
                                 initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 exit={{ opacity: 0, y: 40 }}
                                 transition={{ duration: 1 }}
-                                viewport={{ once: false, amount: 0.2 }}>Վարկյան</motion.div>
+                                viewport={{ once: true, amount: 0.2 }}>Վարկյան</motion.div>
                         </div>
                     </>
                 )}
@@ -802,75 +729,56 @@ function CountdownTimer() {
     );
 }
 
-export function MapLinkButton({
-    lat = 40.1792,
-    lng = 44.4991,
-    label = "Marker",
-    placeId = "",
-    className = "program-btn",
-    children,
-    ...rest
-}) {
-    const coords = `${lat},${lng}`;
-    const encodedLabel = encodeURIComponent(label);
-    const encodedPlaceId = encodeURIComponent(placeId);
+function MapLinkButton({
+                                          placeId = "",
+                                          lat = null,
+                                          lng = null,
+                                          label = "View place",
+                                          className = "program-btn",
+                                          forceBrowser = true,
+                                          children,
+                                          ...rest
+                                      }) {
+    const encodedLabel = encodeURIComponent(label || "");
+    const encodedPlaceId = placeId ? encodeURIComponent(placeId) : "";
 
-    // Google Maps web — используем query_place_id, если есть placeId
-    const googleMapsWeb = placeId
+
+// Ссылка на web: если есть placeId — используем query_place_id, иначе — координаты.
+    const googleMapsWeb = encodedPlaceId
         ? `https://www.google.com/maps/search/?api=1&query=${encodedLabel}&query_place_id=${encodedPlaceId}`
-        : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(coords)}`;
+        : (lat != null && lng != null
+                ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${lat},${lng}`)}`
+                : null
+        );
 
-    // comgooglemaps schema (Google Maps app)
-    const comGoogleMaps = placeId
-        ? `comgooglemaps://?q=place_id:${encodedPlaceId}&center=${encodeURIComponent(coords)}`
-        : `comgooglemaps://?q=${encodeURIComponent(coords)}&center=${encodeURIComponent(coords)}`;
-
-    // Android intent (deep link)
-    const intentUrl = placeId
-        ? `intent://maps.google.com/maps?q=place_id:${encodedPlaceId}#Intent;scheme=https;package=com.google.android.apps.maps;end`
-        : `intent://maps.google.com/maps?daddr=${encodeURIComponent(coords)}&q=${encodeURIComponent(coords)}#Intent;scheme=https;package=com.google.android.apps.maps;end`;
-
-    // Apple Maps (всё равно не поддерживает place_id — оставляю как опцию, но не используем при placeId)
-    const appleMaps = `https://maps.apple.com/?ll=${encodeURIComponent(coords)}&q=${encodedLabel}`;
-
-    const isIOS = typeof navigator !== "undefined" && /iP(ad|hone|od)/.test(navigator.userAgent);
-    const isAndroid = typeof navigator !== "undefined" && /Android/.test(navigator.userAgent);
 
     function handleClick(e) {
         e.preventDefault();
 
-        // Android: try intent/app -> fallback to Google web
-        if (isAndroid) {
-            try {
-                // open intent (this should open app if installed)
-                window.location.href = intentUrl;
-                // if app not installed, open Google web after short timeout
-                setTimeout(() => {
-                    window.open(googleMapsWeb, "_blank", "noopener,noreferrer");
-                }, 700);
-            } catch {
-                window.open(googleMapsWeb, "_blank", "noopener,noreferrer");
+
+        if (forceBrowser) {
+            if (!googleMapsWeb) {
+                console.error(
+                    "MapLinkButton: forceBrowser=true but neither placeId nor lat/lng provided — aborting."
+                );
+                return;
             }
+// Открываем только веб-версию Google Maps в новой вкладке
+            window.open(googleMapsWeb, "_blank", "noopener,noreferrer");
             return;
         }
 
-        // iOS: try Google Maps app schema, but fallback to Google web (NOT Apple Maps) to preserve place_id
-        if (isIOS) {
-            try {
-                window.location.href = comGoogleMaps;
-                // если Google Maps app отсутствует — перейти на Google web (чтобы сохранить place_id)
-                setTimeout(() => {
-                    window.location.href = googleMapsWeb;
-                }, 700);
-            } catch {
-                window.location.href = googleMapsWeb;
-            }
-            return;
-        }
 
-        // Desktop / other: open Google Maps web (preserves place_id)
-        window.open(googleMapsWeb, "_blank", "noopener,noreferrer");
+// Если forceBrowser == false — всё равно открываем web-ссылку, но при отсутствии данных
+// можно попробовать открыть общий поиск по метке
+        const fallback = googleMapsWeb ?? `https://www.google.com/maps/search/?api=1&query=${encodedLabel}`;
+        window.open(fallback, "_blank", "noopener,noreferrer");
     }
+
+
+// href полезен для правого клика / no-JS
+    const hrefFallback = googleMapsWeb ?? `https://www.google.com/maps/search/?api=1&query=${encodedLabel}`;
+
 
     return (
         <motion.a
@@ -878,14 +786,15 @@ export function MapLinkButton({
             initial={{ opacity: 0, x: 80 }}
             whileInView={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 80 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: false, amount: 0.2 }}
-            href={googleMapsWeb}           // href на Google web — полезно если JS отключен
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }}
+            href={hrefFallback}
             onClick={handleClick}
+            target="_blank"
             rel="noopener noreferrer"
             {...rest}
         >
-            {children ?? "ԻՆՉՊԵՍ ՀԱՍՆԵԼ"}
+            {children ?? label}
         </motion.a>
     );
 }
